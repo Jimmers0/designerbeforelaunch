@@ -1,2 +1,6 @@
 html {box-sizing:border-box;}
 *, *::before, *::after {box-sizing:inherit;}
+
+body {
+  background: linear-gradient(133deg, rgba(30,149,63,1) 0%, rgba(0,192,209,1) 50%, rgba(255,210,0,1) 100%);
+}

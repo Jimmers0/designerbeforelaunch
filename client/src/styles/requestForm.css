@@ -1,0 +1,53 @@
+/*        REQUEST FORM STYLING       */
+.requestFormContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.requestForm {
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 850px;
+  margin: 200px 50px 0 0;
+  padding: 50px;
+  width: 18%;
+}
+
+.requestForm .formLabel {
+  color: #939598;
+  padding-left: 15px;
+}
+
+.requestForm .formInput {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  height: 40px;
+}
+
+#dueDate {
+  margin-top: 10px;
+}
+
+.checkboxSpan {
+  color: #939598;
+  margin: 10px 0;
+}
+
+#description {
+  height: 100px;
+}
+
+.submit {
+  background: #43DA86;
+  border-radius: 30px;
+  color: white;
+  height: 50px;
+  margin: auto;
+  outline: none;
+  width: 60%;
+}

@@ -1,16 +1,17 @@
 import React, {useState} from 'react'
-import 'normalize.css/normalize.css'
-import '../styles/App.css'
+import '../styles/main.css'
 import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import store from '../store'
+import DesignRequest from './DesignRequest'
 
 export default props => {
 
   return (
     <Provider store={store}>
-      <div>
-       hi
-      </div>
+      <Router>
+        <Route exact path='/' component={DesignRequest}/>
+      </Router>
     </Provider>
   )
 }

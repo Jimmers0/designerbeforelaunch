@@ -1,0 +1,59 @@
+/*        QUEUE STYLING         */
+.queueContainer {
+  background: white;
+  border-radius: 15px;
+  color: #939598;
+  height: 950px;
+  margin: 200px 0 0 250px;
+  padding: 20px 50px 50px 50px;
+  width: 30%;
+}
+
+.projectsQueueContainer {
+  height: 380px;
+  overflow-y: hidden;
+}
+
+.projectsQueueContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.projectsQueueContainer::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 50px;;
+} 
+
+.projectsQueueContainer:hover {
+  overflow-y: scroll;
+} 
+
+.projectsHeading {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.queueContainer .projectsQueue {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  height: 80px;
+  margin: 15px 0;
+  padding: 10px 20px;
+  width: 640px;
+}
+
+
+.queueContainer .projectsQueue:hover {
+  border-bottom: 5px solid lightgray;
+  padding: 20px 30px;
+}
+
+.queueContainer .projectsQueue .projectsInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.queueContainer .projectsQueue h4,
+.queueContainer .projectsQueue .projectsInfo p {
+margin: 0;
+}

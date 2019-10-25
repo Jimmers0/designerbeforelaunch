@@ -1,0 +1,11 @@
+html {box-sizing:border-box;}
+*, *::before, *::after {box-sizing:inherit;}
+
+/*         GENERAL STYLING            */
+body{
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom right, #1E953F, #00C0d1, #FFD200);
+ }
+

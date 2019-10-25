@@ -1,0 +1,25 @@
+/*            HEADER STYLING           */
+.headerContainer {
+  background-image: url('../assets/headerImage.svg');
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 650px;
+  background-position: 100px 5px;
+  box-shadow: -2px 13px 10px -6px rgba(0,0,0,0.62);
+  height: 125px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.headerContainer a {
+  color: #999999;
+  font-size: 20px;
+  position:  absolute;
+  right: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  top: 45px;
+}

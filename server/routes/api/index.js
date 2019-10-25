@@ -1,9 +1,9 @@
-const router = require('express').Router()
+// const router = require('express').Router()
 
-router.get('/greeting', (req, res, next) => {
-  res.json({
-    "greeting": "Hello World!"
-  })
-})
+// router.get('/greeting', (req, res, next) => {
+//   res.json({
+//     "greeting": "Hello World!"
+//   })
+// })
 
-module.exports = router
+// module.exports = router

@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../styles/header.css'
+import '../styles/Header.css'
 
 export default props => {
   return (
     <div className='headerContainer'>
       <Link to='/admin' className='adminLink'>Admin</Link>
+      <div className="logos">
+      </div>
     </div>
   )
 }

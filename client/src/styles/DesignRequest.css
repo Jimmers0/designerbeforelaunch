@@ -1,8 +1,10 @@
 /*        REQUEST FORM STYLING       */
 .requestFormContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
+  height: auto;
+  
 }
 .requestForm {
   background: white;
@@ -11,23 +13,23 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 950px;
-  margin: 200px 50px 0 0;
+  margin: 200px 0 0 0;
   padding: 30px 50px 50px 50px;
-  width: 18%;
+  width: 600px;
 }
-
-.requestForm .formLabel {
+.formLabel {
   color: #939598;
   font-size: 20px;
   padding-left: 15px;
 }
 
-.requestForm .formInput {
+.formInput {
   border-radius: 10px;
   border: 1px solid #ddd;
   margin-bottom: 10px;
   margin-top: 10px;
   height: 40px;
+  padding: 10px;
 }
 
 #dueDate {
@@ -51,4 +53,31 @@
   margin: auto;
   outline: none;
   width: 60%;
+}
+
+@media only screen and (max-width: 1400px) {
+  .requestFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    align-content: center;
+    
+  }
+  .requestForm {
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 950px;
+    margin: 200px auto 0 auto;
+    padding: 30px 50px 50px 50px;
+    width: 600px;
+  }
+  
+
+
 }

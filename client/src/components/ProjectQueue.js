@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/projectQueue.css'
+import '../styles/ProjectQueue.css'
 
 export default props => {
   const tasks = [

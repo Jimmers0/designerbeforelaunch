@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/requestForm.css'
+import '../styles/DesignRequest.css'
 
 import ProjectQueue from './ProjectQueue'
 

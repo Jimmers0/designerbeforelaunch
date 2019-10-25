@@ -64,7 +64,7 @@ export default props => {
             <option value='other'>Other  (Please be specific in Description)</option>
           </optgroup>
         </select>
-        <div classname='formCheckbox'>
+        <div className='formCheckbox'>
           <input className='checkboxInput' type='checkbox' name='printMulti' /> <span className='checkboxSpan'>Multiple</span> <br/>
         </div>
 

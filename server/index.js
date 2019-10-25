@@ -1,8 +1,7 @@
 const express = require('express')
 const app = express()
 const server = require('http').Server(app)
-const io = require('socket.io')(server)
-const init = require('./chat').default
+
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())

@@ -17,11 +17,6 @@ export default props => {
     name: "blah2",
     projectType: "something",
     ticketNum: 666
-    },
-    {
-    name: "blah2",
-    projectType: "something",
-    ticketNum: 666
     }
   ]
 

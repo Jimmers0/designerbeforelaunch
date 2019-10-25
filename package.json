@@ -17,7 +17,15 @@
   },
   "homepage": "https://github.com/pc-summer-2019/boilerplate#readme",
   "dependencies": {
-    "concurrently": "^4.1.1"
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^4.1.1",
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.7",
+    "request": "^2.88.0"
   },
   "boilerplate": {
     "name": "boilerplate",
@@ -29,5 +37,8 @@
     },
     "author": "",
     "license": "ISC"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
   }
 }

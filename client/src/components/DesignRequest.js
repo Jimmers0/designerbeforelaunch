@@ -74,6 +74,8 @@ export default props => {
         <label className='formLabel'>Reference Links</label>
         <input className='formInput' type='url' name='reference' />
 
+        <input type='file' name='upload' />
+
         <label className='formLabel'>Description</label>
         <textarea 
           id='description'

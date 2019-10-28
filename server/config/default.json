@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://dmalla:work1234@aksdd-sheh3.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://dmalla:work1234@aksdd-sheh3.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "akssupersecrettoken"
 }

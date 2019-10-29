@@ -1,16 +1,24 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect } from 'react'
 import '../styles/main.css'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import store from '../store'
+import { loadUser } from '../actions/auth'
+import setAuthToken from '../utils/setAuthToken'
 
 import DesignRequest from './DesignRequest'
 import Header from './Header'
 import Login from './auth/Login'
 import Register from './auth/Register'
-import Alert from './Alert'
 
-export default props => {
+if(localStorage.token) {
+  setAuthToken(localStorage.token)
+}
+
+export default () => {
+  useEffect(() => {
+    store.dispatch(loadUser())
+  }, [])
 
   return (
     <Provider store={store}>

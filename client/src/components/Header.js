@@ -5,7 +5,7 @@ import '../styles/Header.css'
 export default props => {
   return (
     <div className='headerContainer'>
-      <Link to='/admin' className='adminLink'>Admin</Link>
+      <Link to='/login' className='adminLink'>Admin</Link>
       <div className="logos">
       </div>
     </div>

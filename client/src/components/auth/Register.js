@@ -28,6 +28,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       register({ name, email, password })
     }
   }
+  console.log(isAuthenticated)
 
   console.log(isAuthenticated)
   // Redirect if registration successful

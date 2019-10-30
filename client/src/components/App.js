@@ -10,6 +10,7 @@ import DesignRequest from './DesignRequest'
 import Header from './Header'
 import Login from './auth/Login'
 import Register from './auth/Register'
+import LoggedOut from './LoggedOut'
 import Admin from './Admin'
 
 if(localStorage.token) {
@@ -29,6 +30,7 @@ export default () => {
         <Switch>
           <Route path='/login' component={Login}/>
           <Route path='/register' component={Register}/>
+          <Route path='/loggedout' component={LoggedOut}/>
           <Route path='/admin' component={Admin}/>
         </Switch>
       </Router>

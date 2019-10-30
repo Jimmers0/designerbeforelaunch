@@ -1,0 +1,45 @@
+.loginContainer {
+    margin: 200px auto;
+    width: 500px;
+    height: 400px;
+    background: white;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+.loginTitle{
+    color: gray;
+    margin: 20px;
+
+}
+.loginSubtitle{
+    margin: 10px;
+}
+
+.loginInput{
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    height: 50px;
+    width: 300px;
+    margin: 20px;
+    padding: 10px;
+    color: grey;
+    font-size: 18px;
+}
+.loginInput::placeholder{
+    padding: 0px;
+    font-size: 18px;
+}
+.loginSubmit{
+    height: 35px;
+    width: 100px;
+    background: rgb(0, 229, 137);
+    border-radius: 20px;
+    margin: 20px;
+}
+.loginRegister{
+    visibility: hidden;
+}

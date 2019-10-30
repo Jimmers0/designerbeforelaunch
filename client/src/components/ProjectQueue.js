@@ -58,7 +58,7 @@ export default props => {
       <p className='projectsHeading'>Projects in Progress</p>
       <div className='projectsQueueContainer'>
         {tasks.map(task => (
-            <div className="projectsQueue">
+            <div key={task.id} className="projectsQueue">
               <h4>{task.name}</h4>
               <div className='projectsInfo'>
                 <p>{task.projectType}</p>
@@ -70,7 +70,7 @@ export default props => {
       <p className='projectsHeading'>Projects in Queue</p>
       <div className='projectsQueueContainer'>
           {works.map(task => (
-            <div className="projectsQueue">
+            <div key={task.id} className="projectsQueue">
               <h4>{task.name}</h4>
               <div className='projectsInfo'>
                 <p>{task.projectType}</p>

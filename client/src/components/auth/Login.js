@@ -3,6 +3,8 @@ import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { login } from '../../actions/auth'
+import '../../styles/Login.css'
+
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -22,48 +24,44 @@ const Login = ({ login, isAuthenticated }) => {
   // Redirect if logged in
   if (isAuthenticated) {
     return <Redirect to= "/admin" />
-  }
+  } 
+    
+  
 
   return (
     <Fragment>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <h1 >Sign In</h1>
-      <p><i ></i> Sign Into Your Account</p>
-      <form onSubmit={e=>onSubmit(e)}>
-        <div>
-          <input 
-            type='email' 
-            placeholder='Email Address' 
-            name='email' 
-            value={email}
-            onChange={e=>onChange(e)}
-            required
-          />
-        </div>
-        <div>
-          <input
-            type='password'
-            placeholder='Password'
-            name='password'
-            value={password}
-            onChange={e=>onChange(e)}
-            minLength='6'
-            required
-          />
-        </div>
-        <input type='submit' value='Login' />
-      </form>
-      <p>
-        Don't have an account? <Link to='/register'>Sign Up</Link>
-      </p>
+      <div className="loginContainer">
+          <h1 className="loginTitle">Welcome back!</h1>
+          <p className="loginSubtitle"><i ></i>Log Into Your Account</p>
+          <form onSubmit={e=>onSubmit(e)}>
+            <div>
+              <input className="loginInput"
+                type='email' 
+                placeholder='Email Address' 
+                name='email' 
+                value={email}
+                onChange={e=>onChange(e)}
+                required
+              />
+            </div>
+            <div>
+              <input className="loginInput"
+                type='password'
+                placeholder='Password'
+                name='password'
+                value={password}
+                onChange={e=>onChange(e)}
+                minLength='6'
+                required
+              />
+            </div>
+            <input className="loginSubmit" type='submit' value='Login' />
+          </form>
+          <p className="loginRegister">
+            Don't have an account? <Link to='/register'>Sign Up</Link>
+          </p>
+
+      </div>
     </Fragment>
   )
 }

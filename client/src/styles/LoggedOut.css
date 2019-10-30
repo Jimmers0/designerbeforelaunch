@@ -1,0 +1,10 @@
+.loggedOutMessage{
+    height: 100px;
+    width: 500px;
+    margin: 300px auto;
+    background: white;
+    border-radius: 20px;
+    line-height: 100px;
+    text-align: center;
+    color: grey;
+}

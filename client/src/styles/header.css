@@ -1,6 +1,5 @@
 /*            HEADER STYLING           */
 .headerContainer {
-  background-image: url('../assets/headerImage.svg');
   background-color: white;
   background-repeat: no-repeat;
   background-size: 650px;
@@ -12,6 +11,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  display: flex;
 }
 .logos{
   background-image: url('../assets/headerImage.svg');
@@ -19,18 +19,30 @@
   background-size: contain;
   background-color: white;
   height: 100px;
-  width: 500px;
-  visibility: hidden;
+  width: 550px;
+  visibility: visible;
+  margin-top: 15px;
+  margin-left: 30px;;
 }
-
-.headerContainer a {
-  color: #999999;
-  font-size: 20px;
+.Links{
   position:  absolute;
   right: 60px;
+  top: 45px;
+}
+.adminLink {
+  color: #999999;
+  font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
-  top: 45px;
+  margin: 10px;
+}
+.logOutLink{
+  color: #999999;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 10px;
+
 }
 
 @media only screen and (max-width: 1400px) {

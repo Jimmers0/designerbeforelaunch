@@ -10,6 +10,7 @@ import DesignRequest from './DesignRequest'
 import Header from './Header'
 import Login from './auth/Login'
 import Register from './auth/Register'
+import LoggedOut from './LoggedOut'
 
 if(localStorage.token) {
   setAuthToken(localStorage.token)
@@ -28,6 +29,7 @@ export default () => {
         <Switch>
           <Route path='/login' component={Login}/>
           <Route path='/register' component={Register}/>
+          <Route path='/loggedout' component={LoggedOut}/>
         </Switch>
       </Router>
     </Provider>

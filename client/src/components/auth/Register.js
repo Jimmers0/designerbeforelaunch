@@ -30,6 +30,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
   console.log(isAuthenticated)
 
+  console.log(isAuthenticated)
   // Redirect if registration successful
   if (isAuthenticated) {
     return <Redirect to='/admin' />

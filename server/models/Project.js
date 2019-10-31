@@ -18,7 +18,8 @@ const ProjectScema = new mongoose.Schema ({
     required: true
   },
   multiple: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   dueDate: {
     type: Date,
@@ -32,17 +33,22 @@ const ProjectScema = new mongoose.Schema ({
     contentType: String
   },
   description: {
-    type: String,
-    required: true
+    type: String
+  },
+  ticketNumber: {
+    type: String
   },
   received: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   inProgress: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   completed: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   date: {
     type: Date,

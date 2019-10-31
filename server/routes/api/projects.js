@@ -75,7 +75,8 @@ router.post('/', [
       completed
     })
 
-    
+    await project.save()
+    res.json(project)
   } catch (err) {
     console.error(err.message)
     res.status(500).send('Server Error')

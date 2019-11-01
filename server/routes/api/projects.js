@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const { check, validationResult } = require('express-validator')
 
+
 // Projects Model
 const Project = require('../../models/Project')
 
@@ -9,12 +10,15 @@ const Project = require('../../models/Project')
 // @desc    Receive all projects
 // @access  Public
 router.get('/', async (req, res) => {
+  console.log("backend request")
   try {
     const projects = await Project.find()
     res.json(projects)
+    console.log(projects)
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error')
+
   }
 });
 

@@ -36,7 +36,7 @@ const ProjectScema = new mongoose.Schema ({
     type: String
   },
   ticketNumber: {
-    type: String
+    type: Number 
   },
   received: {
     type: Boolean,

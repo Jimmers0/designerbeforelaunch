@@ -1,14 +1,19 @@
 import React, { useState, useEffect} from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import '../styles/Header.css'
-import { logout } from '../actions/auth'
-import { login } from '../actions/auth'
 import PropTypes from 'prop-types'
-import { useSelector } from 'react-redux'
+
 import { connect } from 'react-redux'
+import { getProjects } from '../actions/project.actions'
+
 
 
 const Header = ({ isAuthenticated }) =>  {
+
+  useEffect(() => {
+    getProjects()
+    
+}, [])
 
   console.log(isAuthenticated)
 
@@ -42,7 +47,6 @@ const mapStateToProps = state => ({
 })
 
 Header.propTypes = {
-  logout: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool
 }
 

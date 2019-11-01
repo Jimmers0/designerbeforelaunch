@@ -1,12 +1,27 @@
-import React from 'react'
+import React ,{useEffect, useState} from 'react'
 import '../styles/DesignRequest.css'
+import { useSelector } from 'react-redux'
+import { getProjects } from '../actions/project.actions'
+import { connect } from 'react-redux'
 
 import ProjectQueue from './ProjectQueue'
 
-export default props => {
+const DesignRequest = ({ project }) => {
   const handleSubmit = e => {
     e.preventDefault();
   }
+
+  useEffect(() => {
+    getProjects()
+    
+}, [])
+
+
+
+  const projects = useSelector(appState => appState.project)
+
+  console.log("projects", project)
+
   return (
     <div className='requestFormContainer'>  
       <form className='requestForm' onSubmit={handleSubmit}>
@@ -93,3 +108,12 @@ export default props => {
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+  project: state.projects.project
+})
+
+export default connect(
+  mapStateToProps, 
+  
+)(DesignRequest)

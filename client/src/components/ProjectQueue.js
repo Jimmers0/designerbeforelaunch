@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import { useSelector } from 'react-redux'
-import '../styles/ProjectQueue.css'
+import '../styles/projectQueue.css'
 import { getProjects } from '../actions/project.actions'
 import { connect } from 'react-redux'
 
@@ -55,7 +55,7 @@ const ProjectQueue = ({ project }) => {
     <div className='queueContainer'>
       <p className='projectsHeading'>Projects in Progress</p>
       <div className='projectsQueueContainer'>
-        {project.map((task, i) => (
+        {works.map((task, i) => (
             <div key={i++} className="projectsQueue">
               <h4>{task.name}</h4>
               <div className='projectsInfo'>
@@ -67,12 +67,12 @@ const ProjectQueue = ({ project }) => {
       </div>
       <p className='projectsHeading'>Projects in Queue</p>
       <div className='projectsQueueContainer'>
-          {works.map((task, i) => (
+          {project.map((task, i) => (
             <div key={i++} className="projectsQueue">
               <h4>{task.name}</h4>
               <div className='projectsInfo'>
                 <p>{task.projectType}</p>
-                <p>Ticket #{task.ticketNum}</p>
+                <p>Ticket #{task.ticketNumber}</p>
               </div>
             </div>
           ))}

@@ -23,7 +23,7 @@ const ProjectScema = new mongoose.Schema ({
   },
   dueDate: {
     type: Date,
-    required: true
+    // required: true
   },
   reference: {
     type: String,

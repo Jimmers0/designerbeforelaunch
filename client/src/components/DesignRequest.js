@@ -1,41 +1,46 @@
 import React ,{useEffect, useState} from 'react'
 import '../styles/DesignRequest.css'
 import { useSelector } from 'react-redux'
-import { getProjects } from '../actions/project.actions'
+import { postProjects } from '../actions/project.actions'
 import { connect } from 'react-redux'
 
 import ProjectQueue from './ProjectQueue'
 
 const DesignRequest = ({ project }) => {
+  const [designRequest, setDesignRequest] = useState({
+    name: '',
+    email: '',
+    projectName: '',
+    projectType: 'banner',
+    description: ''
+  })
+
+  const { name, email, projectName, projectType, description } = designRequest
+
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
+    postProjects(designRequest)
+    console.log('Data: ', designRequest)
   }
 
-  useEffect(() => {
-    getProjects()
-    
-}, [])
-
-
-
-  const projects = useSelector(appState => appState.project)
-
-  console.log("projects", project)
+  const handleChange = e => ({
+    ...designRequest, [e.target.name]: e.target.value })
+    console.log(designRequest)
 
   return (
     <div className='requestFormContainer'>  
       <form className='requestForm' onSubmit={handleSubmit}>
         <label className='formLabel'>Name</label>
-        <input className='formInput' type='text' name='name' />
+        <input className='formInput' onChange={e => handleChange(e)} value={name} type='text' name='name' />
 
         <label className='formLabel'>Email</label>
-        <input className='formInput' type='email' name='email' />
+        <input className='formInput' onChange={e => handleChange(e)} value={email} type='email' name='email' />
 
         <label className='formLabel'>Project Name</label>
-        <input className='formInput' type='text' name='projectName' />
+        <input className='formInput' onChange={e => handleChange(e)} value={projectName} type='text' name='projectName' />
 
         <label className='formLabel'>Project Type</label>
-        <select className='formInput'>
+        <select className='formInput' onChange={e => handleChange(e)} value={projectType}>
           <optgroup label='Digital'>
             <option value='banner'>Banner</option>
             <option value='emailBlast'>Email Blast</option>
@@ -95,6 +100,8 @@ const DesignRequest = ({ project }) => {
         <textarea 
           id='description'
           className='formInput'
+          onChange={e => handleChange(e)} 
+          value={description}
           placeholder='All information available on the project' 
           rows='5' 
           cols='33' 

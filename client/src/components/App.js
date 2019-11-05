@@ -12,6 +12,7 @@ import Login from './auth/Login'
 import Register from './auth/Register'
 import LoggedOut from './LoggedOut'
 import Admin from './Admin'
+import ViewProject from './ViewProject'
 
 if(localStorage.token) {
   setAuthToken(localStorage.token)
@@ -32,6 +33,7 @@ export default () => {
           <Route path='/register' component={Register}/>
           <Route path='/loggedout' component={LoggedOut}/>
           <Route path='/admin' component={Admin}/>
+          <Route exact path="/:id" component={ViewProject} />
         </Switch>
       </Router>
     </Provider>

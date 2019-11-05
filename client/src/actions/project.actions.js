@@ -11,12 +11,15 @@ export function getProjects() {
     })
 }
 
-export function postProjects(name, email, projectName, projectType, description) {
+export function postProjects(name, email, projectName, projectType, multiple, dueDate, url, description) {
     axios.post('/api/projects', {
         name: name,
         email: email,
         projectName: projectName,
         projectType: projectType,
+        multiple: multiple,
+        dueDate: dueDate,
+        url: url,
         description: description
 
     }).then(resp => {

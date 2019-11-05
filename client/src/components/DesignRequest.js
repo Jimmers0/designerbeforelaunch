@@ -7,40 +7,39 @@ import { connect } from 'react-redux'
 import ProjectQueue from './ProjectQueue'
 
 const DesignRequest = ({ project }) => {
-  const [designRequest, setDesignRequest] = useState({
-    name: '',
-    email: '',
-    projectName: '',
-    projectType: 'banner',
-    description: ''
-  })
 
-  const { name, email, projectName, projectType, description } = designRequest
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [projectName, setProjectName] = useState('')
+  const [projectType, setProjectType] = useState('')
+  const [multiple, setMultiple] = useState(false)
+  const [dueDate, setDueDate] = useState('')
+  const [url, setUrl] = useState('')
+  const [description, setDescription] = useState('')
+
 
   const handleSubmit = e => {
     e.preventDefault()
-    postProjects(designRequest)
-    console.log('Data: ', designRequest)
+    postProjects(name, email, projectName, projectType, multiple, dueDate, url, description)
+    console.log('Data: .........', "name" ,name, "email", email, "projectname",projectName, "projecttype",projectType, "printmultiple",multiple,"date", dueDate, "url", url, "description", description)
   }
-
-  const handleChange = e => ({
-    ...designRequest, [e.target.name]: e.target.value })
-    console.log(designRequest)
+    console.log()
 
   return (
     <div className='requestFormContainer'>  
       <form className='requestForm' onSubmit={handleSubmit}>
         <label className='formLabel'>Name</label>
-        <input className='formInput' onChange={e => handleChange(e)} value={name} type='text' name='name' />
+        <input className='formInput' onChange={e => setName(e.target.value)} value={name} type='text' name='name' />
 
         <label className='formLabel'>Email</label>
-        <input className='formInput' onChange={e => handleChange(e)} value={email} type='email' name='email' />
+        <input className='formInput' onChange={e => setEmail(e.target.value)} value={email} type='email' name='email' />
 
         <label className='formLabel'>Project Name</label>
-        <input className='formInput' onChange={e => handleChange(e)} value={projectName} type='text' name='projectName' />
+        <input className='formInput' onChange={e => setProjectName(e.target.value)} value={projectName} type='text' name='projectName' />
 
         <label className='formLabel'>Project Type</label>
-        <select className='formInput' onChange={e => handleChange(e)} value={projectType}>
+        <select className='formInput' onChange={e => setProjectType(e.target.value)} value={projectType}>
           <optgroup label='Digital'>
             <option value='banner'>Banner</option>
             <option value='emailBlast'>Email Blast</option>
@@ -84,15 +83,24 @@ const DesignRequest = ({ project }) => {
             <option value='other'>Other  (Please be specific in Description)</option>
           </optgroup>
         </select>
-        <div className='formCheckbox'>
-          <input className='checkboxInput' type='checkbox' name='printMulti' /> <span className='checkboxSpan'>Multiple</span> <br/>
-        </div>
+        
+        <label>
+          <input
+            type="checkbox" onChange={ev => {
+            const { checked } = ev.currentTarget;
+            console.log(checked)
+            setMultiple(checked)
+            console.log(multiple) // toggles to true and false
+            // continue with the rest
+            }}
+          />
+        </label>
 
         <label id='dueDate' className='formLabel'>Preferred Due Date</label>
-        <input className='formInput' type='date' name='dueDate' />
+        <input className='formInput' type='date' onChange={e => setDueDate(e.target.value)} value={dueDate} name='dueDate' />
 
         <label className='formLabel'>Reference Links</label>
-        <input className='formInput' type='url' name='reference' />
+        <input className='formInput' type='url' name='reference' onChange={e => setUrl(e.target.value)} value={url}/>
 
         <input type='file' name='upload' />
 
@@ -100,7 +108,7 @@ const DesignRequest = ({ project }) => {
         <textarea 
           id='description'
           className='formInput'
-          onChange={e => handleChange(e)} 
+          onChange={e => setDescription(e.target.value)} value={setDescription}
           value={description}
           placeholder='All information available on the project' 
           rows='5' 

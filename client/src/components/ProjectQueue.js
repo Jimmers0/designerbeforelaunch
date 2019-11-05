@@ -55,15 +55,25 @@ const ProjectQueue = ({ project }) => {
     <div className='queueContainer'>
       <p className='projectsHeading'>Projects in Progress</p>
       <div className='projectsQueueContainer'>
-        {works.map((task, i) => (
-            <div key={i++} className="projectsQueue">
-              <h4>{task.name}</h4>
-              <div className='projectsInfo'>
-                <p>{task.projectType}</p>
-                <p>Ticket #{task.ticketNumber}</p>
+        {project.filter(task => task.inProgress === true)
+          .map((task, i) => {
+            if(!task) {
+              return(
+                <div>
+                  <p>No Tasks!</p>
+                </div>
+              )
+            } else {
+              return(
+              <div key={i++} className="projectsQueue">
+                <h4>{task.name}</h4>
+                <div className='projectsInfo'>
+                  <p>{task.projectType}</p>
+                  <p>Ticket #{task.ticketNumber}</p>
+                </div>
               </div>
-            </div>
-          ))}
+              )} 
+          })}
       </div>
       <p className='projectsHeading'>Projects in Queue</p>
       <div className='projectsQueueContainer'>

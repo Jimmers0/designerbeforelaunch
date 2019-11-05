@@ -110,13 +110,19 @@ router.put('/update/:id', async (req, res) => {
     } = req.body
   
     const project = await Project.findByIdAndUpdate(req.params.id, {
-      name: name,
-      email: email,
-      projectName: projectName,
-      projectType: projectType,
-      description: description,
-      dueDate: dueDate,
-      ticketNumber: ticketNumber
+      name,
+      email,
+      projectName,
+      projectType,
+      multiple,
+      dueDate,
+      reference,
+      attachment,
+      description,
+      ticketNumber,
+      received,
+      inProgress,
+      completed
     })
 
    res.json(project);

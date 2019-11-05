@@ -12,8 +12,6 @@
 .projectsQueueContainer {
   height: 380px;
   overflow-y: hidden;
-  
-  
 }
 
 .projectsQueueContainer::-webkit-scrollbar {

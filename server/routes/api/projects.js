@@ -88,6 +88,45 @@ router.post('/', [
 
 })
 
+// @route   PUT api/projects/update/:id
+// @desc    Update projects
+// @access  Private
+router.put('/update/:id', async (req, res) => {
+  try {
+    const {
+      name,
+      email,
+      projectName,
+      projectType,
+      multiple,
+      dueDate,
+      reference,
+      attachment,
+      description,
+      ticketNumber,
+      received,
+      inProgress,
+      completed
+    } = req.body
+  
+    const project = await Project.findByIdAndUpdate(req.params.id, {
+      name: name,
+      email: email,
+      projectName: projectName,
+      projectType: projectType,
+      description: description,
+      dueDate: dueDate,
+      ticketNumber: ticketNumber
+    })
+
+   res.json(project);
+
+  } catch (err) {
+    console.err(err.message);
+    res.status(500).send('Server Error')
+  }
+})
+
 
 
 module.exports = router

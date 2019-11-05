@@ -50,6 +50,12 @@ const ProjectScema = new mongoose.Schema ({
     type: Boolean,
     default: false
   },
+  startDate: {
+    type: Date,
+  },
+  completedTime: {
+    type: Date,
+  },
   date: {
     type: Date,
     default: Date.now

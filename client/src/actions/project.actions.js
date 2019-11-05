@@ -25,7 +25,21 @@ export function postProjects(name, email, projectName, projectType, multiple, du
     }).then(resp => {
         console.log("data trying to submit", resp.data)
     })
- 
+}
+
+export function updateProjects(name, email, projectName, projectType, multiple, dueDate, url, description) {
+    axios.put('/api/projects/update/:id', {
+        name: name,
+        email: email,
+        projectName: projectName,
+        projectType: projectType,
+        multiple: multiple,
+        dueDate: dueDate,
+        url: url,
+        description: description
+    }).then(resp => {
+        console.log("Data updated: ", resp.data)
+    })
 }
 
 

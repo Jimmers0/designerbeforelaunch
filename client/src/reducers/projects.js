@@ -1,6 +1,7 @@
 const initialState = {
   
-    project: []
+    project: [],
+    id: ''
     }
     
     
@@ -12,4 +13,6 @@ const initialState = {
         default:
           return state
       }
+        
+
     }

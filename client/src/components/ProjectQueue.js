@@ -2,6 +2,9 @@ import React,{ useEffect } from 'react'
 import '../styles/projectQueue.css'
 import { getProjects } from '../actions/project.actions'
 import { connect } from 'react-redux'
+import { Link, Redirect } from 'react-router-dom'
+import { setId } from '../actions/project.actions'
+
 
 const ProjectQueue = ({ project }) => {
 
@@ -38,15 +41,16 @@ console.log('array ', somethingelse)
         ))}
         </div>
       <p className='projectsHeading'>Projects in Queue</p>
-      <div className='projectsQueueContainer'>
+        <div className='projectsQueueContainer'>
           {project.map((task, i) => (
-            <div key={i++} className="projectsQueue">
+            <Link to={"/" + task._id}  style={{textDecoration: 'none', overflow: 'hidden'}}><div key={i++} className="projectsQueue">
               <h4>{task.name}</h4>
               <div className='projectsInfo'>
                 <p>{task.projectType}</p>
                 <p>Ticket #{task.ticketNumber}</p>
               </div>
             </div>
+            </Link>
           ))}
         </div>
     </div>

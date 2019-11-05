@@ -37,7 +37,6 @@ export function updateProjects(name, email, projectName, projectType, multiple, 
         dueDate: dueDate,
         url: url,
         description: description
-
     }).then(resp => {
         console.log("Data updated: ", resp.data)
     })

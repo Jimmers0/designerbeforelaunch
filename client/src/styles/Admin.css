@@ -1,0 +1,42 @@
+.adminProjectInfoContainer{
+    background: white;
+    border-radius: 20px;
+    color: #999999; 
+    height: 950px;
+    margin: 200px 80px 0 80px;
+    padding: 20px;
+    width: 400px;
+}
+
+.adminContainer{
+    display: flex;
+}
+.adminProjectInfoTitle{
+    font-weight: 600;
+    color: rgb(155, 156,159);
+    font-size: 15px;
+    margin: 10px;
+}
+.adminButton{
+    align-self: center;
+    background: rgb(0, 229, 137);
+    border-Radius: 30px;
+    color: white;
+    font-size: 13px;
+    height: 40px;
+    width: 150px;
+    margin: 20px;
+}
+.adminButtonContainer{
+    display: flex;
+    justify-content: center;
+}
+.adminProjectInfoKey{
+    margin: 10px 15px;
+    font-size: 10px;
+}
+.adminDescriptionBox{
+    height: 350px;
+    width: 360px;
+
+}

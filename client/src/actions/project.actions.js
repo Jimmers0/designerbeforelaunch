@@ -42,6 +42,14 @@ export function updateProjects(name, email, projectName, projectType, multiple, 
     })
 }
 
+export function setId(id){
+    store.dispatch({
+        type: 'SET_ID',
+        payload: id
+    })
+    console.log(id)
+}
+
 
 
             

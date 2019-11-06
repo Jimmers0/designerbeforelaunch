@@ -1,95 +1,111 @@
-import React from 'react'
-import '../styles/DesignRequest.css'
+import React,{ useEffect } from 'react'
+import '../styles/Admin.css'
+import { getProjects, setIt } from '../actions/project.actions'
+import { connect } from 'react-redux'
+import { Link, Redirect } from 'react-router-dom'
+import { setId } from '../actions/project.actions'
 
-import ProjectQueue from './ProjectQueue'
 
-export default props => {
-  const handleSubmit = e => {
-    e.preventDefault();
-  }
+
+
+const Admin = ({ project, id }) => {
+
+  useEffect(() => {
+    getProjects()
+    
+}, [])
+
+  var somethingelse = []
+
+console.log('array ', somethingelse)
+
+  console.log("projects", project)
+
   return (
-    <div className='requestFormContainer'>  
-      <form className='requestForm' onSubmit={handleSubmit}>
-        <label className='formLabel'>Name</label>
-        <input className='formInput' type='text' name='name' />
-
-        <label className='formLabel'>Email</label>
-        <input className='formInput' type='email' name='email' />
-
-        <label className='formLabel'>Project Name</label>
-        <input className='formInput' type='text' name='projectName' />
-
-        <label className='formLabel'>Project Type</label>
-        <select className='formInput'>
-          <optgroup label='Digital'>
-            <option value='banner'>Banner</option>
-            <option value='emailBlast'>Email Blast</option>
-            <option value='productImage'>Product Image</option>
-            <option value='socialMediaAd'>Social Media Ad</option>
-            <option value='video'>Video</option>
-            <option value='websiteMockup'>Website Mockup</option>
-            <option value='other'>Other  (Please be specific in Description)
-</option>
-          </optgroup>
-          <optgroup label='Physical Product'>
-            <option value='bottleOpener'>Bottle Opener</option>
-            <option value='clothing'>Clothing</option>
-            <option value='keyChain'>Key Chain</option>
-            <option value='popSocket'>Pop Socket</option>
-            <option value='usb'>USB</option>
-            <option value='other'>Other  (Please be specific in Description)</option>
-          </optgroup>
-          <optgroup label='Print'>
-            <option value='businessCard'>Business Card</option>
-            <option value='brochureBiFold'>Brochure - Bi-fold</option>
-            <option value='brochureTriSquare'>Brochure - Trifold Square</option>
-            <option value='brochureTriStandard'>Brochure - Trifold Standard</option>
-            <option value='catalogMore'>Catalog - Less than 50 pages</option>
-            <option value='catalogLess'>Catalog - More than 50 pages</option>
-            <option value='documentFull'>Document - Full Sheet</option>
-            <option value='documentHalf'>Document - Half Sheet</option>
-            <option value='flyer4x6'>Flyer - 4x6</option>
-            <option value='flyer5x7'>Flyer - 5x7</option>
-            <option value='flyer6x9'>Flyer - 6x9</option>
-            <option value='postCard4x6'>Post Card 4x6</option>
-            <option value='postCard5x7'>Post Card 5x7</option>
-            <option value='postCard6x9'>Post Card 6x9</option>
-            <option value='poster11x17'>Poster 11x17</option>
-            <option value='poster24x36'>Poster 24x36</option>
-            <option value='other'>Other  (Please be specific in Description)</option>
-          </optgroup>
-          <optgroup label='Other'>
-            <option value='consultation'>Consultation</option>
-            <option value='labeling'>Labeling</option>
-            <option value='other'>Other  (Please be specific in Description)</option>
-          </optgroup>
-        </select>
-        <div className='formCheckbox'>
-          <input className='checkboxInput' type='checkbox' name='printMulti' /> <span className='checkboxSpan'>Multiple</span> <br/>
+  <div class="adminContainer">
+    <div className='queueContainer'>
+      <p className='projectsHeading'>Projects in Progress</p>
+      <div className='projectsQueueContainer'>
+        {project.map(task => {
+          if (task.inProgress === true ) {
+            somethingelse.push('project')
+          }
+        })}
+        { somethingelse.length === 0 ? <div>no tasks</div> :  
+        project.map((task, i) => (
+          task.inProgress === true ? 
+          <div key={task.ticketNumber} className="projectsQueue" onClick={e => setId(task._id)}>
+            <h4>{task.name}</h4>
+            <div className='projectsInfo'>
+              <p>{task.projectType}</p>
+              <p>Ticket #{task.ticketNumber}</p>
+            </div>
+          </div> : null 
+        ))}
         </div>
+      <p className='projectsHeading'>Projects in Queue</p>
+        <div className='projectsQueueContainer'>
+          {project.map((task, i) => (
+            <div key={i++} className="projectsQueue" onClick={e => setId(task._id)}>
+              <h4>{task.name}</h4>
+              <div className='projectsInfo'>
+                <p>{task.projectType}</p>
+                <p>Ticket #{task.ticketNumber}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+    </div>
+    <div className="adminProjectInfoContainer">
+    {project.map((task, i) => (
+            <div key={i++} >
+                { id === task._id ? 
+                <div>
+                    <div>
+                        <div>
+                            <p className="adminProjectInfoTitle">Name</p>
+                            <p className="adminProjectInfoKey">{task.name}</p>
+                            <p className="adminProjectInfoTitle">Email</p>
+                            <p className="adminProjectInfoKey">{task.email}</p>
+                            <p className="adminProjectInfoTitle">Project Name</p>
+                            <p className="adminProjectInfoKey">{task.projectName}</p>
+                            <p className="adminProjectInfoTitle">Project Type</p>
+                            <p className="adminProjectInfoKey">{task.projectType}</p>
+                            <p className="adminProjectInfoTitle">Multiple Items</p>
+                            <p className="adminProjectInfoKey">{task.multiple === true ? "Multiple" : "Single"}</p>
+                            <p className="adminProjectInfoTitle">New Listing</p>
+                            <p className="adminProjectInfoKey">Some Filler Text</p>
+                            <p className="adminProjectInfoTitle">Preferred Due Date</p>
+                            <p className="adminProjectInfoKey">{task.dueDate ? task.dueDate : <p className="adminProjectInfoKey">Some filler text</p>}</p>
+                            <p className="adminProjectInfoTitle">Reference Links</p>
+                            <p className="adminProjectInfoKey">{task.url}</p>
+                            <p className="adminProjectInfoKey">Some Filler text</p>
+                            <p className="adminProjectInfoTitle">Description</p>
+                            <div className="adminDescriptionBox">
+                            <p className="adminProjectInfoKey">{task.description}</p>
+                            </div>
+                            <div className="adminButtonContainer">
+                              {task.received === false ? <button className="adminButton">Start Project</button> : task.inProgress === true ? <button className="adminButton">Complete Project</button> : <p>Project Complete!</p>}
+                              </div>
 
-        <label id='dueDate' className='formLabel'>Preferred Due Date</label>
-        <input className='formInput' type='date' name='dueDate' />
+                        </div>
+                    </div>
+            </div>: null}
+            </div>
+        
+            ))}
+    </div>
 
-        <label className='formLabel'>Reference Links</label>
-        <input className='formInput' type='url' name='reference' />
-
-        <input type='file' name='upload' />
-
-        <label className='formLabel'>Description</label>
-        <textarea 
-          id='description'
-          className='formInput'
-          placeholder='All information available on the project' 
-          rows='5' 
-          cols='33' 
-          minLength='1' 
-          maxLength='500'> 
-        </textarea>
-
-        <button className='submit' type='submit'>SUBMIT</button>
-      </form>
-      <ProjectQueue />
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+  project: state.projects.project,
+  id: state.projects.id
+})
+
+export default connect(
+  mapStateToProps, 
+  
+)(Admin)

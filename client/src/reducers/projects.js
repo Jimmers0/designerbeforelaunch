@@ -10,9 +10,12 @@ const initialState = {
         
         case 'GET_PROJECT':
           return {...state, project: action.payload}
+        case 'SET_ID':
+            return {...state, id: action.payload}
         default:
           return state
       }
+        
         
 
     }

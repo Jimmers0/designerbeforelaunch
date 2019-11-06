@@ -41,6 +41,11 @@
   margin: 15px 0;
   padding: 10px 20px;
   width: 630px;
+  text-decoration: none;
+}
+.pqLink{
+  text-decoration: none;
+  color: #939598;
 }
 
 

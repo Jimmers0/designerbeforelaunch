@@ -31,19 +31,19 @@ console.log('array ', somethingelse)
         { somethingelse.length === 0 ? <div>no tasks</div> :  
         project.map((task, i) => (
           task.inProgress === true ? 
-          <div key={task.ticketNumber} className="projectsQueue">
+          <Link to={"/" + task._id}  className="pqLink" style={{textDecoration: 'none', overflow: 'hidden'}}><div key={task.ticketNumber} className="projectsQueue">
             <h4>{task.name}</h4>
             <div className='projectsInfo'>
               <p>{task.projectType}</p>
               <p>Ticket #{task.ticketNumber}</p>
             </div>
-          </div> : null 
+          </div></Link> : null 
         ))}
         </div>
       <p className='projectsHeading'>Projects in Queue</p>
         <div className='projectsQueueContainer'>
           {project.map((task, i) => (
-            <Link to={"/" + task._id}  style={{textDecoration: 'none', overflow: 'hidden'}}><div key={i++} className="projectsQueue">
+            <Link to={"/" + task._id}  className="pqLink" style={{textDecoration: 'none', overflow: 'hidden'}}><div key={i++} className="projectsQueue">
               <h4>{task.name}</h4>
               <div className='projectsInfo'>
                 <p>{task.projectType}</p>

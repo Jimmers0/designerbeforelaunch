@@ -3,7 +3,6 @@ import '../styles/DesignRequest.css'
 import { useSelector } from 'react-redux'
 import { postProjects } from '../actions/project.actions'
 import { connect } from 'react-redux'
-import { setId } from '../actions/project.actions'
 
 import ProjectQueue from './ProjectQueue'
 

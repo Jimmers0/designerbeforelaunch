@@ -1,6 +1,5 @@
-import React ,{useEffect, useState} from 'react'
+import React ,{ useState} from 'react'
 import '../styles/DesignRequest.css'
-import { useSelector } from 'react-redux'
 import { postProjects } from '../actions/project.actions'
 import { connect } from 'react-redux'
 
@@ -108,7 +107,7 @@ const DesignRequest = ({ project }) => {
         <textarea 
           id='description'
           className='formInput'
-          onChange={e => setDescription(e.target.value)} value={setDescription}
+          onChange={e => setDescription(e.target.value)}
           value={description}
           placeholder='All information available on the project' 
           rows='5' 

@@ -1,14 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
-import { getId } from '../actions/project.actions'
+import { Link } from 'react-router-dom'
 import '../styles/ViewProject.css'
 
 
 const ViewProject = ({ project, id, match }) => {
-
-
-console.log("view Projects id..." , match.params.id)
 
     return(
        
@@ -64,16 +60,11 @@ console.log("view Projects id..." , match.params.id)
             </div>
         
             ))}
+            <div className='buttonsContainer'>
+                <Link to={'/update/'+ match.params.id}><button type='button' className='projectViewButton1'>Edit</button></Link>
+                <button type='button' className='projectViewButton2'>Delete</button>
+            </div>
         </div>
-        
-        
-            
-        
-    
-            
-            
-
-       
     )
 
 }

@@ -1,13 +1,15 @@
 .viewProjectContainer{
-    height: 500px;
-    width: 700px;
-    margin:  200px auto;
     background: white;
     box-shadow: 5px 5px 5px rgb(0, 0, 0, .5);
+    height: 625px;
+    margin:  200px auto;
+    width: 700px;
 }
+
 .vp {
     display: flex;
 }
+
 .vpLeft{
     height: 100%;
     width: 350px;
@@ -17,40 +19,74 @@
     height: 100%;
     width: 350px;
 }
+
 .vpTitle{
-    font-size: 25px;
     color: #939598;
     font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
     margin: 20px;
-
 }
-.vpSub{
-    
+
+.vpSub{ 
+    font-size:10px;
     height: 100%;
     line-height: 2px;
-    font-size:10px;
     margin: 20px;
 }
-.vpDescription{
-    
-    height: 350px;
-    width: 330px;
-    align-self: center;
-    margin: 10px;
-    font-size: 20px;
-    line-height: 18px;
 
+.vpDescription{
+    align-self: center;
+    font-size: 20px;
+    height: 350px;
+    line-height: 18px;
+    margin: 10px;
+    width: 330px;
 }
+
 .vpDescBox{
-    height: 300px;
-    width: 320px;
-    font-size: 15px;
-    padding: 20px;
     background:white;
     box-shadow: 2px 2px 5px;
+    font-size: 15px;
+    height: 300px;
+    padding: 20px;
+    width: 320px;
 }
+
+.updateDescription {
+    border: none;
+    height: 260px;
+    outline: none;
+    resize: none;
+    width: 280px;
+}
+
 .vpTicket{
     height: 100%;
     width: 100%;
+}
 
+.vpTicket label {
+    display: block;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.projectViewButton1 {
+    background: green;
+    border-radius: 15px;
+    height: 50px;
+    outline: none;
+    width: 150px;
+}
+
+.projectViewButton2 {
+    background: red;
+    border-radius: 15px;
+    height: 50px;
+    outline: none;
+    width: 150px;
 }

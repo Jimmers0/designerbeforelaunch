@@ -2,8 +2,7 @@ import React,{ useEffect } from 'react'
 import '../styles/projectQueue.css'
 import { getProjects } from '../actions/project.actions'
 import { connect } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
-import { setId } from '../actions/project.actions'
+import { Link } from 'react-router-dom'
 
 
 const ProjectQueue = ({ project }) => {

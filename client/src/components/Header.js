@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import React, { useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/Header.css'
 import PropTypes from 'prop-types'
 
@@ -15,10 +15,7 @@ const Header = ({ isAuthenticated }) =>  {
     
 }, [])
 
-  console.log(isAuthenticated)
-
   function logout(){
-    console.log("logged out")
     localStorage.removeItem("token")
   }
 

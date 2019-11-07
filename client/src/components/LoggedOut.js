@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
 import '../styles/LoggedOut.css'
 
 export default props =>{

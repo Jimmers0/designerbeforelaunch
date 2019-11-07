@@ -12,6 +12,7 @@ export function getProjects() {
 }
 
 export function postProjects(name, email, projectName, projectType, multiple, dueDate, url, description) {
+    console.log('action: ', name, email, projectName, projectType, multiple, dueDate, url, description)
     axios.post('/api/projects', {
         name: name,
         email: email,
@@ -27,13 +28,14 @@ export function postProjects(name, email, projectName, projectType, multiple, du
     })
 }
 
-export function updateProjects(name, email, projectName, projectType, multiple, dueDate, url, description) {
-    axios.put('/api/projects/update/:id', {
+export function updateProjects(id, name, email, projectName, projectType, dueDate, url, description) {
+    console.log('reducer ', id)
+    axios.patch(`/api/projects/update/${id}`, {
         name: name,
         email: email,
         projectName: projectName,
         projectType: projectType,
-        multiple: multiple,
+        // multiple: multiple,
         dueDate: dueDate,
         url: url,
         description: description

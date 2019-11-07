@@ -91,7 +91,7 @@ router.post('/', [
 // @route   PUT api/projects/update/:id
 // @desc    Update projects
 // @access  Private
-router.put('/update/:id', async (req, res) => {
+router.patch('/update/:id', async (req, res) => {
   try {
     const {
       name,
@@ -126,9 +126,10 @@ router.put('/update/:id', async (req, res) => {
     })
 
    res.json(project);
+   
 
   } catch (err) {
-    console.err(err.message);
+    // console.error(err.message)
     res.status(500).send('Server Error')
   }
 })
